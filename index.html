@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>GDI Slides Template - The GDI HTML Presentation Framework</title>
+		<title>Introduction to React</title>
 
 		<meta name="description" content="Girl Develop It framework for easily creating beautiful presentations using HTML in GDI theme. Forked from Hakim El Hattab's reveal.js">
-		<meta name="author" content="Girl Develop It">
+		<meta name="author" content="Eric Adams / GDI Buffalo">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -50,63 +50,191 @@
 			<div class="slides">
         <!-- Opening -->
 				<section>
-					<img src="dist/img/circle-gdi-logo.png" alt="GDI Logo" class="noborder"/>
-					<h1>GDI Reveal.js</h1>
-					<h2>Girl Develop It's Framework for HTML Presentations</h2>
-					<p>
-						<small>Found at <a href ="https://github.com/girldevelopit/gdi-slides-template">Girl Develop It reveal.js fork</a>.</small>
-					</p>
-					<p>
-						<small>Original Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+					<section>
+						<img src="dist/img/circle-gdi-logo.png" alt="GDI Logo" class="noborder" />
+						<h1>Introduction to React</h1>
+					</section>
+					<section>
+						<h2>Course Outline</h2>
+						<ul>
+							<li>Day 1: Introduction, Concepts, and Setup</li>
+							<li>Day 2: Building Blocks of React</li>
+							<li>Day 3: APIs &amp; Managing Application State</li>
+							<li>Day 4: Best Practices &amp; Application Deployment</li>
+						</ul>
+					</section>
 				</section>
         <!-- Compatibility-->
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.</p>
-
-						<p>We highly recommend using Chrome, currently, however, the latest version of Safari, mobile Safari (iPad), Firefox and IE9 will work.
-					</p>
+					<section>
+						<h2>First, a bit about your instructors.</h2>
+					</section>
+					<section>
+						<h3>Eric Adams</h3>
+						<ul>
+							<li>Web Developer for 15+ years</li>
+							<li>Senior Full-Stack Engineer @ ClearView Social</li>
+							<li>Father of 3</li>
+							<li>Musician</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Bill Boulden</h3>
+						<ul>
+							<li>CTO @ ClearView Social</li>
+							<li>Former API Architect @ Delaware North Companies</li>
+							<li>DJ Spruke</li>
+							<li>Member of the Twitterati</li>
+						</ul>
+					</section>
 				</section>
 
 				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
+					<h2>What will we use in this course?</h2>
+					<ul>
+						<li class="fragment">git (to checkout code branches)</li>
+						<li class="fragment">Node.JS and npm</li>
+						<li class="fragment">React Bootstrap</li>
+					</ul>
+					<br><br>
+					<h4 class="fragment">We're on our own for everything else!</h4>
 				</section>
 
 				<!-- Examples of basic html based slides -->
 				<section>
-					<h2>Marvelous Unordered List</h2>
+					<h2>Course Structure</h2>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li>We'll start each day by checking out a code branch.</li>
+						<li>We'll break up each day into two parts, with some Q&amp;A time between.</li>
+						<li>Any questions during the class? Don't hesitate to ask!</li>
 					</ul>
+					<br><br>
+					<p class="fragment">Now let's get started!</p>
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
+					<h1>Day 1: Introduction,<br>Concepts, and Setup</h1>
+					<center>
+						<img src="https://s3.amazonaws.com/gdi-buffalo-react/getting-serious.jpg" />
+					</center>
 				</section>
 
                 <section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-					<p>P.S. This won't work when running the slides locally unless you run reveal.js from a local web server (<a href="https://github.com/girldevelopit/gdi-slides-template/wiki#compiling-slides-and-running-locally" target="_blank">learn how</a>).</p>
+					<section>
+						<h1>JavaScript Frameworks</h1>
+						<h2>(in 4 slides)</h2>
+					</section>
+					<section>
+						<center>
+							<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/48886/images/4222913/jquery.png" />
+						</center>
+						<h2>The jQuery Era</h2>
+						<h3>Everything, Everywhere, All the Time</h3>
+					</section>
+					<section>
+						<center>
+							<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/48886/images/4222919/Screen_Shot_2017-10-13_at_10.43.57_PM.png" />
+						</center>
+						<h2>The Backbone Era</h2>
+						<h3>Adding Structure to jQuery</h3>
+					</section>
+					<section>
+						<center>
+							<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/48886/images/4222930/Screen_Shot_2017-10-13_at_10.58.43_PM.png" />
+						</center>
+						<h2>The Angular Era</h2>
+						<h3>Merging Data, Events, and Markup</h3>
+					</section>
+					<section>
+						<h2>JavaScript Today</h2>
+						<center>
+							<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/48886/images/4222940/js2016.png" />
+						</center>
+					</section>
+				</section>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+				<section>
+					<section>
+						<center>
+							<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/48886/images/4222948/jsx-highlight.png" />
+						</center>
+						<h2>The React Era</h2>
+						<h3>Data, Events, and Markup become Components</h3>
+					</section>
+					<section>
+						<h2>The Semantic Building Blocks</h2>
+						<ul>
+							<li>Extended HTML syntax</li>
+							<li>Reusable Components</li>
+							<li>Composed of Only Views</li>
+							<li>Unique Build Pipeline</li>
+						</ul>
+					</section>
+					<section>
+						<h2>The Advantages of React</h2>
+						<ul>
+							<li>Efficient Rendering using Virtual DOM</li>
+							<li>Able to run on the Server</li>
+							<li>Reusable Components</li>
+							<li>Automatic Event Delegation</li>
+						</ul>
+					</section>
+					<section>
+						<center>
+							<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/48886/images/4229692/Screen_Shot_2017-10-16_at_3.53.56_PM.png" />
+						</center>
+					</section>
+					<section>
+						<center>
+							<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/48886/images/4224357/scanlon.gif" />
+						</center>
+						<h3>So this is great for the web,</h3>
+						<h3>but what else can it do?</h3>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>React Native</h2>
+						<center>
+							<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/48886/images/4224331/Screen_Shot_2017-10-14_at_3.27.48_PM.png" />
+						</center>
+					</section>
+					<section>
+						<h2>Some Companies Using<br> React Native</h2>
+						<ul>
+							<li>Facebook</li>
+							<li>Instagram</li>
+							<li>Airbnb</li>
+							<li>Skype</li>
+							<li>Walmart</li>
+							<li>Bloomberg</li>
+							<li>SoundCloud</li>
+						</ul>
+						<br><br>
+						<a href="https://facebook.github.io/react-native/showcase.html">
+							https://facebook.github.io/react-native/showcase.html
+						</a>
+					</section>
+					<section>
+						<h2>React &amp; Electron</h2>
+						<a href="https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c">
+							https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c
+						</a>
+					</section>
+				</section>
+
+				<section>
+					<h1>Dev Setup</h1>
+<pre><code>
+	$ git clone https://github.com/adamsea/gdi-react-app
+	$ ...cloning repo
+	$ cd gdi-react-app
+	$ npm install
+	$ ...installing dependencies
+	$ npm start
+
+</code></pre>
 				</section>
 
 				<!-- Examples of code slides-->
@@ -354,7 +482,7 @@ end
 			</div>
   		<footer>
         <div class="copyright">
-          Official class name here -- Chapter name here (if content modified from original) --
+          Introduction to React -- GDI Buffalo --
           <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
         </div>
       </footer>

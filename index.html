@@ -36,10 +36,21 @@
 		<!-- If use the PDF print sheet so students can print slides-->
 
 		<link rel="stylesheet" href="dist/css/print/pdf.css" type="text/css" media="print">
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 		<!--[if lt IE 9]>
-        <script src="dist/js/html5shiv.js"></script>
-        <![endif]-->
+		<script src="dist/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<style>
+			.reveal section .instructor-img {
+				border-radius: 50%;
+				display: block;
+				height: 200px;
+				object-fit: cover;
+				margin: 0 auto 20px auto;
+				width: 200px;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -71,6 +82,7 @@
 					</section>
 					<section>
 						<h3>Eric Adams</h3>
+						<img class="instructor-img" src="https://s3.amazonaws.com/gdi-buffalo-react/eric.png" />
 						<ul>
 							<li>Web Developer for 15+ years</li>
 							<li>Senior Full-Stack Engineer @ ClearView Social</li>
@@ -80,6 +92,7 @@
 					</section>
 					<section>
 						<h3>Bill Boulden</h3>
+						<img class="instructor-img" src="https://s3.amazonaws.com/gdi-buffalo-react/bill.png" />
 						<ul>
 							<li>CTO @ ClearView Social</li>
 							<li>Former API Architect @ Delaware North Companies</li>
@@ -225,9 +238,10 @@
 				</section>
 
 				<section>
-					<h1>Dev Setup</h1>
+					<section>
+						<h1>Initial Setup</h1>
 <pre><code>
-	$ git clone https://github.com/adamsea/gdi-react-app
+	$ git clone https://github.com/adamsea/gdi-react-app.git
 	$ ...cloning repo
 	$ cd gdi-react-app
 	$ npm install
@@ -235,257 +249,41 @@
 	$ npm start
 
 </code></pre>
-				</section>
-
-				<!-- Examples of code slides-->
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>For HTML -- Surround your code pre, then code class "xml".</p>
-<pre><code class="xml">&lt;ul class="demo"&gt;
-  &lt;li&gt;No order here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
-				</section>
-
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>We can also make code editable</p>
-<pre><code contenteditable class="xml">&lt;ul class="demo"&gt;
-  &lt;li&gt;No order here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
-				</section>
-
-
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>CSS</p>
-<pre><code contenteditable class ="css">body{
-  background-color: #ffffff;
-}
-</code></pre>
-				</section>
-
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>Javascript</p>
-<pre><code contenteditable class ="javascript">function helloWorld(){
-  var name = 'GDI';
-  alert("Hi, " + name)
-}
-</code></pre>
-				</section>
-
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>PHP</p>
-<pre><code contenteditable class ="php">function helloWorld(){
-  $name = 'GDI';
-  echo "Hi, " . $name;
-}
-</code></pre>
-				</section>
-
-				<section>
-					  <h2>But wait! We teach code</h2>
-<p>Ruby</p><pre><code contenteditable class ="ruby">def hello_world
-  @name = 'GDI'
-  puts "Hi, #{@name}"
-end
-</code></pre>
-				</section>
-
-         <section>
- 					  <h2>But wait! We teach code</h2>
- 					  <p>Python</p>
-<pre><code contenteditable class ="python">def hello_world():
-  name = "GDI"
-  print 'Hi, ' + name
-  return
-</code></pre>
- 				</section>
-
- 				 <section>
- 					  <h2>But wait! We teach code</h2>
- 					  <p>Java</p>
-<pre><code contenteditable class ="java">public void helloWorld(){
-  String name = "GDI";
-  System.out.println("Hi," + name)
-}
-</code></pre>
- 				</section>
-
-
-        <!-- Elements entering one at a time-->
-        <section>
+					</section>
 					<section>
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
-
+						<center>
+							<img src="https://s3.amazonaws.com/gdi-buffalo-react/react-starter.png" />
+						</center>
+					</section>
+					<section>
+						<h2>create-react-app</h2>
+						<blockquote cite="https://github.com/facebook/create-react-app#create-react-app-">
+							Create React apps with no build configuration.
+						</blockquote>
+						<br>
+						<br>
+						<a href="https://github.com/facebook/create-react-app">https://github.com/facebook/create-react-app</a>
+					</section>
+					<section>
+						<h2>Why use create-react-app?</h2>
+						<ul>
+							<li class="fragment">Managed Dependencies</li>
+							<li class="fragment">Preconfigured Build Pipeline (both dev and production)</li>
+							<li class="fragment">Developer-friendly Setup</li>
+							<li class="fragment">PWA-friendly File Structure</li>
+						</ul>
 						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
+							After this slide, open up vscode and explore the file structure. Then, we'll create a couple of basic components.
 						</aside>
 					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
 				</section>
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#/14/1">down</a>.
-						</p>
-						<a href="#/14/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-						<a href="#/14/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
-						<a href="#/14" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<a href="#/14/3" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
-						<a href="#/14/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/14" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview. Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>rvl.io</h2>
-					<p>
-						You know, we are nerds after all and will probably get a kick out of all of this HTML. BUT, if you really don't like writing slides in HTML you can use the online editor <a href="http://www.rvl.io" target="_blank">rvl.io</a>.
-					</p>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','dist/css/gdicool.css'); return false;">GDI Cool</a> -
-            <a href="?theme=gdilight#/themes" onclick="document.getElementById('theme').setAttribute('href','dist/css/gdilight.css'); return false;">GDI Light</a> -
-            <a href="?theme=gdisunny#/themes" onclick="document.getElementById('theme').setAttribute('href','dist/css/gdisunny.css'); return false;">GDI Sunny</a> -
-            <a href="?theme=default#/themes" onclick="document.getElementById('theme').setAttribute('href','dist/css/default.css'); return false;">Default</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
-					</blockquote>
-				</section>
-
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/1">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
-				</section>
-
-				<section>
-					<h1>THE END</h1>
-					<h3>BY Girl Develop It</h3>
-					<h4>Special thanks to: Hakim El Hattab / hakim.se</h4>
-				</section>
-
 			</div>
-  		<footer>
-        <div class="copyright">
-          Introduction to React -- GDI Buffalo --
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
-        </div>
-      </footer>
+			<footer>
+				<div class="copyright">
+					Introduction to React -- GDI Buffalo --
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+				</div>
+			</footer>
 		</div>
 
 

@@ -277,6 +277,120 @@
 						</aside>
 					</section>
 				</section>
+				<section>
+					<h2>Day 1: What We've Covered</h2>
+					<ul>
+						<li class="fragment">The evolution of JavaScript Frameworks</li>
+						<li class="fragment">The Benefits of Using React</li>
+						<li class="fragment">Other Projects Using React</li>
+						<li class="fragment">Our Project Setup</li>
+						<li class="fragment">Anatomy of a React Page</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Day 2: Building Blocks of React</h1>
+					<center>
+						<img src="https://s3.amazonaws.com/gdi-buffalo-react/oprah.jpg" />
+					</center>
+				</section>
+				<section>
+					<h2>What We'll Cover</h2>
+					<ul>
+						<li class="fragment">Components</li>
+						<li class="fragment">Props</li>
+						<li class="fragment">State</li>
+						<li class="fragment">Events</li>
+						<li class="fragment">Children</li>
+					</ul>
+					<br><br>
+					<h4 class="fragment">Let's Get Started!</h4>
+				</section>
+				<section>
+					<section>
+						<h2>Components</h2>
+						<ul>
+							<li>The building blocks of a React application</li>
+							<li>Corresponds (usually) to an HTML Element on a page</li>
+							<li>Contains a method to render markup</li>
+							<li>Must be "mounted" using ReactDOM.render() with createElement()</li>
+						</ul>
+						<aside class="notes">
+							Components are the building blocks of a React application. The markup to generate
+							a component very closely resembles HTML, and most concepts of managing HTML through
+							JavaScript extend to React Components.  A component is typically structured as a class,
+							using the ES6 class syntax (example to follow).  The component class will contain a render
+							method that is used to output a JSX virtual dom tree.  Going back to the virtual dom
+							section from yesterday, this is what makes React fast - the fact that it keeps an in-memory
+							representation of your components, that render actual HTML to the page.  All components are
+							mounted to another component.  This typically occurs within the JSX when a component is rendered.
+							However there is also a root component that must be rendered to the page, and this is typically
+							attached to a single DOM node (a div) and the page structure proceeds to populate from there.
+						</aside>
+					</section>
+					<section>
+						<h2>Sample Component</h2>
+						<center>
+							<img src="https://s3.amazonaws.com/gdi-buffalo-react/component.png" />
+						</center>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Props</h2>
+						<ul>
+							<li>Live in this.props within the scope of the component</li>
+							<li>Are Read-Only within the scope of the component</li>
+							<li>Are passed from the parent component to child components</li>
+							<li>Act as a sort of "configuration" for components</li>
+							<li>Syntax mimics that of HTML attributes</li>
+						</ul>
+						<aside class="notes">
+							Props act as a way to pass key/value pairs to a component.  You can use them within a
+							component through a property called this.props.  Each key passed in is available as a
+							property in this.props, and you use those keys to access the values assigned to your
+							component's props.  The are read-only, so you cannot change the value of a prop within
+							a component.  However, if there is a change in a parent component, for instance, an API
+							call or some other change that triggers a re-render, those modified values could be passed
+							in as props to child components, which would update those components.  The best way to
+							think about them is like HTML attributes.  They are used to configure a component to either
+							appear or behave in a certain way, and if you make an update to that value, the underlying
+							behavior changes.  (think like a "readonly" or "disabled" attribute on an HTML input or button)
+						</aside>
+					</section>
+					<section>
+						<h2>Reserved Properties</h2>
+						<ul>
+							<li>HTML Element attributes are mostly available - with two notable exceptions</li>
+							<li>The HTML "class" attribute is called "className"</li>
+							<li>The HTML "style" attribute is called "styles"</li>
+							<li>Inline Styles are passed as an object to "styles"</li>
+						</ul>
+						<aside class="notes">
+							After reading these bullet points, just note that "className" specifically is gonna
+							trip people up, especially if you copy code snippets to use in a react app
+						</aside>
+					</section>
+					<section>
+						<h2>Sample Styles Object</h2>
+<pre class="javascript"><code>
+	{
+		color: "#333",
+		backgroundColor: "#eee"
+	}
+
+</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>State</h2>
+						<ul>
+							<li>Live in this.state within the scope of the component</li>
+						</ul>
+						<aside class="notes">
+						</aside>
+					</section>
+				</section>
 			</div>
 			<footer>
 				<div class="copyright">

@@ -358,10 +358,18 @@
 						</aside>
 					</section>
 					<section>
+						<h2>Sample Props</h2>
+						<center>
+							<img style="width: 45%; height: 230px; object-fit: cover;" src="https://s3.amazonaws.com/gdi-buffalo-react/props.png" />
+							<img style="width: 45%; height: 230px; object-fit: cover;" src="https://s3.amazonaws.com/gdi-buffalo-react/props2.png" />
+						</center>
+					</section>
+					<section>
 						<h2>Reserved Properties</h2>
 						<ul>
 							<li>HTML Element attributes are mostly available - with two notable exceptions</li>
 							<li>The HTML "class" attribute is called "className"</li>
+							<li>The "key" property is reserved by React (more on this later)</li>
 							<li>The HTML "style" attribute is called "styles"</li>
 							<li>Inline Styles are passed as an object to "styles"</li>
 						</ul>
@@ -386,10 +394,137 @@
 						<h2>State</h2>
 						<ul>
 							<li>Live in this.state within the scope of the component</li>
+							<li>Can be updated by calling setState() within a component</li>
+							<li>State updates will trigger a re-render</li>
+							<li>DOM updates are applied to the component and its descendants as needed</li>
+							<li>React optimizes for minimum disruption to the DOM</li>
 						</ul>
 						<aside class="notes">
+							Understanding state updates and how they affect a component is probably one
+							of the trickiest, yet most important parts of building applications in React. The
+							simplest answer, straight from the react docs, is that state changes always trigger
+							a new render.  To update state for a component, you call this.setState, which takes
+							two arguments - an object of the keys/values to update, and a callback that is fired
+							after the state update is complete.
+
+							React won't actually update a DOM representation of a component though,
+							unless there is a change in props or state that actually affects a render.  Remember
+							that the virtual dom is a representation of a components with their props and state,
+							and react always manages rendering through its virtual dom.  Because of this, it's
+							extremely important to understand that there may be unintended consequences when you
+							mix libraries like jQuery with react.  jQuery might mutate the actual DOM, but since
+							react doesn't track those mutations it will overwrite UI changes you make with jQuery.
+
+							My best advice is to avoid using libraries like jQuery in react - if you google
+							"awesome react" you'll see many components already build, a lot of which have similar
+							if not identical functionality as jQuery plugins. (show search results here)
+							If you must use a jQuery plugin, use it sparingly and only for things like animation
+							or presentation - definitely do NOT use it for data manipulation
 						</aside>
 					</section>
+					<section>
+						<h2>Sample setState()</h2>
+						<center>
+							<img src="https://s3.amazonaws.com/gdi-buffalo-react/state.png" />
+						</center>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Events</h2>
+						<ul>
+							<li>Event Handlers are passed as props to a component</li>
+							<li>Syntax follows the form<br><br>
+								<code>on&lt;Event&gt;={ this.doThing.bind(this) }</code><br><br></li>
+							<li>React creates a SyntheticEvent object</li>
+							<li>Properties like event.target can be used to read from the underlying element</li>
+						</ul>
+						<aside class="notes">
+							Events in React can be passed as props to a component, as well as Native HTML elements
+							when writing JSX.  If you write a component, you're responsible for handling an "event",
+							and we'll see a sample of doing that when creating our components.  Events follow the
+							naming format of their corresponding HTML attributes with onEvent, where "Event" can be
+							"click" for buttons or links, "change" for input fields, "mouseover", and so on.  When
+							you assign an event handler to an event property, you need to bind its "this" context to the
+							component.  If you're not super-familiar with context in javascript that's ok, react
+							handles a lot of that for you.  The main thing you need to remember is to either call
+							"bind", passing this as the parameter, or set an anonymous function that calls your class
+							method as the handler.  We'll see examples of both of those as we write our application.
+							A SyntheticEvent object is created by React and passed to native HTML event handlers, which
+							contain most of the properties you'd need to work with events.  For instance, you can use
+							event.target.value to get the value of an input field, or event.target.files to get an
+							array of files to upload.
+						</aside>
+					</section>
+					<section>
+						<h2>Sample Event Handler</h2>
+						<center>
+							<img src="https://s3.amazonaws.com/gdi-buffalo-react/events.png" />
+						</center>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Children</h2>
+						<ul>
+							<li>this.props.children is a special prop that is analogous to innerHTML</li>
+							<li>It is iterable, but you must iterate it using React.Children</li>
+							<li>Elements between the start &amp; close tags of a JSX element are accessible as this.props.children</li>
+						</ul>
+						<aside class="notes">
+							Children are a special prop that is used by React to denote child elements rendered
+							within a component.  They can be accessed using this.props.children, and they can
+							be iterated over like an array, but you must use the React.Children API to do that.
+							Basically if you nest elements within a JSX tag for a component you create, those
+							elements would be rendered using this.props.children.  In my own experience, I haven't
+							used this.props.children a lot, but once you get going with react your experience may differ.
+							I'd say it more important to plugin authors, or for creating very abstract/reusable components.
+							(then show sample on the next slide and explain it)
+						</aside>
+					</section>
+					<section>
+						<h2>Sample Children w/Iteration</h2>
+						<center>
+							<img src="https://s3.amazonaws.com/gdi-buffalo-react/children.png" />
+						</center>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Keys</h2>
+						<ul>
+							<li>The "key" property is used to uniquely identify a child when there are sibling elements</li>
+							<li>React uses "key" to differentiate components in a list</li>
+							<li>If you are missing "key", you will lose performance, and potentially component updates!</li>
+							<li>Typically correspond to a uuid, database id, or loop index as a fallback</li>
+							<li>You will be warned in the console if this is missing :)</li>
+						</ul>
+						<aside class="notes">
+							Keys are a reserved property in JSX that are used internally by react.  They are used
+							to differentiate child components among their sibling elements, which is very useful
+							for updating lists of items.  If you are missing a key on an item with siblings, you
+							will potentially lose performance benefits of React rendering, as well as possible
+							updates to a particular item in a list.  It's hard to forget this though, because react
+							gives you a warning for each child missing a key prop.  In my experience a key will typically
+							be a database row id for items returned from an api, or a uuid that you generate.  It can
+							even be a loop index if you have nothing else to fallback on.
+						</aside>
+					</section>
+					<section>
+						<h2>Sample Keys</h2>
+						<center>
+							<img src="https://s3.amazonaws.com/gdi-buffalo-react/props2.png" />
+						</center>
+					</section>
+				</section>
+				<section>
+					<h2>Questions?</h2>
+					<div class="fragment">
+						<h4>Let's create some components!</h4>
+						<center>
+							<img src="https://media.giphy.com/media/BwOU6uH7afefu/giphy.gif" />
+						</center>
+					</div>
 				</section>
 			</div>
 			<footer>

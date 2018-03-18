@@ -59,7 +59,6 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-        <!-- Opening -->
 				<section>
 					<section>
 						<img src="dist/img/circle-gdi-logo.png" alt="GDI Logo" class="noborder" />
@@ -75,7 +74,7 @@
 						</ul>
 					</section>
 				</section>
-        <!-- Compatibility-->
+
 				<section>
 					<section>
 						<h2>First, a bit about your instructors.</h2>
@@ -89,6 +88,10 @@
 							<li>Father of 3</li>
 							<li>Musician</li>
 						</ul>
+						<aside class="notes">
+							First, we'll tell you a bit about ourselves, for those of you who don't know us:
+							(Insert points from the slide)
+						</aside>
 					</section>
 					<section>
 						<h3>Bill Boulden</h3>
@@ -99,6 +102,9 @@
 							<li>DJ Spruke</li>
 							<li>Member of the Twitterati</li>
 						</ul>
+						<aside class="notes">
+							(let Bill talk about himself)
+						</aside>
 					</section>
 				</section>
 
@@ -107,13 +113,14 @@
 					<ul>
 						<li class="fragment">git (to checkout code branches)</li>
 						<li class="fragment">Node.JS and npm</li>
+						<li class="fragment">React</li>
+						<li class="fragment">create-react-app</li>
 						<li class="fragment">React Bootstrap</li>
 					</ul>
 					<br><br>
 					<h4 class="fragment">We're on our own for everything else!</h4>
 				</section>
 
-				<!-- Examples of basic html based slides -->
 				<section>
 					<h2>Course Structure</h2>
 					<ul>
@@ -123,6 +130,15 @@
 					</ul>
 					<br><br>
 					<p class="fragment">Now let's get started!</p>
+					<aside class="notes">
+						Over the next two weeks we're going to try and follow a schedule that will give time
+						for both the instructional / theoretical parts of React, and the hands-on coding that'll
+						get us using React to build an application.  We're going to build a simple application
+						that lets a user upload images, create memes over them, and download/share those images.
+						If you have any questions during any part of the course, feel free to ask!  We'll also
+						break up each night into two parts, with the theory/explanation being part one and the hands-on
+						part being part two.  Between each part we'll have Q&amp;A time as well.
+					</aside>
 				</section>
 
 				<section>
@@ -130,6 +146,10 @@
 					<center>
 						<img src="https://s3.amazonaws.com/gdi-buffalo-react/getting-serious.jpg" />
 					</center>
+					<aside class="notes">
+						Before we talk about react, let's talk briefly about the history of JavaScript frameworks.
+						Since there's only 1 or 2 javascript frameworks this should be easy right?
+					</aside>
 				</section>
 
                 <section>
@@ -143,6 +163,19 @@
 						</center>
 						<h2>The jQuery Era</h2>
 						<h3>Everything, Everywhere, All the Time</h3>
+						<aside class="notes">
+							The jQuery Era
+							Everything, Everywhere, All the Time
+
+							* Pros:
+							* Very easy to create something quickly
+							* Hides a lot of implementation details (animation, events)
+
+							* Cons:
+							* No organization to the code
+							* Impossible to unit test
+							* Difficult to read, and therefore difficult to debug
+						</aside>
 					</section>
 					<section>
 						<center>
@@ -150,6 +183,22 @@
 						</center>
 						<h2>The Backbone Era</h2>
 						<h3>Adding Structure to jQuery</h3>
+						<aside class="notes">
+							The Backbone Era
+							Adding Structure to jQuery's Simplicity
+
+							* Pros:
+							* Easy to understand what the methods are doing
+							* Easy to separate events, ajax, and DOM rendering
+							* Still Hides a lot of implementation detials (animation, events)
+							* Easier to modularize &amp; test
+							* Easier to read
+
+							* Cons:
+							* Keeping the DOM in sync with your data
+							* Communicating between modules
+							* Tight coupling between modules that needed to communicate
+						</aside>
 					</section>
 					<section>
 						<center>
@@ -157,12 +206,46 @@
 						</center>
 						<h2>The Angular Era</h2>
 						<h3>Merging Data, Events, and Markup</h3>
+						<aside class="notes">
+							The Angular Era
+							Merging Data, Events, and Markup Again
+
+							* Pros:
+							* Easy to connect events to the DOM
+							* MVC approach to web development (started in backbone, but really evident here)
+							* Still easy to separate events, ajax, and DOM rendering
+							* Kept the DOM in sync with your data (just assign data to scope variables!)
+
+							* Cons:
+							* Communicating between modules
+							* Testing is more difficult with a magical DOM
+							* The learning curve!  Controllers, directives, scope, factories, and more
+						</aside>
 					</section>
 					<section>
 						<h2>JavaScript Today</h2>
 						<center>
 							<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/48886/images/4222940/js2016.png" />
 						</center>
+						<aside class="notes">
+							This evolution of JavaScript frameworks has given us innovation, and a lot of options,
+							enough that there has been something of an overload in what folks feel like they can
+							handle to keep up with the rapid pace of innovation.  Also, with these frameworks
+							came a lot of questions:
+
+							* How do we separate modules for development?
+							* How do we package applications for production?
+							* How can we maintain cross-browser compatibility (remember jQuery? that's what it's all about!)
+							* How can we utilize new features of the web platform now?
+
+							A *lot* of package managers, task managers, compilers, and frameworks have tried to solve
+							this, and two really stand out.  The babel project is pretty much the universally accepted
+							transpiler for being able to use modern JavaScript syntax, also commonly known as ES6,
+							in a way that is compatbile with all browsers.  Webpack has become the stand-out solution
+							for managing modules in JavaScript, because it is able to directly hook into Babel and use
+							its features.  It also is able to work with CSS modules, HTML or other types of templates,
+							really plugins for most types of file formats exist in webpack to make them into modules.
+						</aside>
 					</section>
 				</section>
 
@@ -182,6 +265,26 @@
 							<li>Composed of Only Views</li>
 							<li>Unique Build Pipeline</li>
 						</ul>
+						<aside class="notes">
+							* Pros
+							* Like Angular, we're back to writing _something_ that looks
+							  more like HTML to represent our application
+							* We do this by creating components, that are the building blocks
+							  for our application (perhaps reference the polymer talk, or web components as an alternative)
+							* We can hide the details of how we obtain data - in fact, react
+							  doesn't care at all about *how* we get data
+							* We don't have to think as much about how or when the DOM is rendered -
+							  for the most part, React handles this
+
+							* Cons
+							* Unfamiliar syntax - JSX - JavaScript XML - incorporates javascript and markup
+							  and abstract components together
+							* Build pipeline to manage this syntax is unique.
+							* You can build projects without ES6, but it's not fun and you can follow basically
+							  none of the documentation - so the build pipeline is required
+							* Managing data with react is different - there is a concept of "state" in components
+							  that is different from the properties you set on a component
+						</aside>
 					</section>
 					<section>
 						<h2>The Advantages of React</h2>
@@ -191,6 +294,29 @@
 							<li>Reusable Components</li>
 							<li>Automatic Event Delegation</li>
 						</ul>
+						<aside class="notes">
+							Now, what are some unique advantages of using React for your project?
+
+							* First, we have the idea of a Virtual DOM - without getting too much
+							  in the weeds on how the Virtual DOM works, it is responsible for creating an
+							  in-memory representation of your DOM that will only update the necessary bits
+							  when data updates. Because rendering goes through the virtual DOM, an initial
+							  render using react is a little bit slower, but updates are much faster.
+
+							* Because the Virtual DOM is an in-memory representation of the DOM, and javascript
+							  is used for updates, it can be run on the server, allow for "Universal JavaScript"
+							  applications
+
+							* Reusable Components - this idea isn't unique to react (its in polymer, angular,
+							  and other frameworks) but using ES6 and module imports/exports by default in the
+							  build pipeline, this is much easier to achieve
+
+							* Events are automatically delegated within a component, meaning that events are
+							  declared once and reused as the real DOM is updated
+
+							All of these things allow you to program applications where performance and modularity
+							are first-class concerns of the framework, rather than afterthoughts!
+						</aside>
 					</section>
 					<section>
 						<center>
@@ -212,6 +338,22 @@
 						<center>
 							<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/48886/images/4224331/Screen_Shot_2017-10-14_at_3.27.48_PM.png" />
 						</center>
+						<aside class="notes">
+							Since components are reusable, and JSX is a declarative syntax that is both decoupled
+							from the DOM and unique to react, what is "rendered" by JSX can be tailored for more than
+							just the web.
+
+							For example - React Native is a project that uses JSX to render native mobile applications. 
+							Similar to the goals of NativeScript, but uses the react syntax that is familiar to React
+							developers.
+
+							There are a number of UI components already available for creating native mobile apps
+							for both Android and iOS.  There are also a number of community-developed components,
+							with more are being added.
+
+							The upside of this all being, if you know React, you can easily learn the components
+							to become an efficient mobile app developer!
+						</aside>
 					</section>
 					<section>
 						<h2>Some Companies Using<br> React Native</h2>
@@ -234,6 +376,13 @@
 						<a href="https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c">
 							https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c
 						</a>
+						<aside class="notes">
+							Electron is a completely different framework for creating desktop applications using JavaScript,
+							in fact if you downloaded the GitHub Desktop application in advance of this course you
+							are using an app built with Electron.  This article linked here is a great starter on using
+							React to build Electron apps ... if anyone is interested in something like that its definitely
+							beyond the scope of this course but this link is a good place to start.
+						</aside>
 					</section>
 				</section>
 
@@ -249,6 +398,15 @@
 	$ npm start
 
 </code></pre>
+						<aside class="notes">
+							(Take a break here for questions)
+
+							Now that we've gone over some of the history of JS development leading to react, and
+							some of the reasons to use React, let's work on getting our development environments set
+							up for this class.
+
+							(instruct through downloading the repo, etc.)
+						</aside>
 					</section>
 					<section>
 						<center>
@@ -263,6 +421,16 @@
 						<br>
 						<br>
 						<a href="https://github.com/facebook/create-react-app">https://github.com/facebook/create-react-app</a>
+						<aside class="notes">
+							While not essential to React development, I do want to take a moment to talk about
+							create-react-app, as it is a BIG part of how react has continued to grow in adoption
+							and get new developers involved.  Remember of course the "JavaScript Today" slide, and
+							all of the options that are out there for building JS apps.  React is only a view layer,
+							but it is a view layer that requires specific build tools.  Create-react-app has given
+							developers a starter-kit for building react applications without having to mess with
+							the configuration of build tools or build scripts which is great, because most developers
+							really don't like getting involved with that stuff.
+						</aside>
 					</section>
 					<section>
 						<h2>Why use create-react-app?</h2>
@@ -273,7 +441,17 @@
 							<li class="fragment">PWA-friendly File Structure</li>
 						</ul>
 						<aside class="notes">
-							After this slide, open up vscode and explore the file structure. Then, we'll create a couple of basic components.
+							Create-react-app is able to hide away the details of how it builds your app, and
+							gives you a stable set of scripts you can run from the command line to develop, test,
+							and deploy your applications.  It has build configurations for both development and
+							production.  It also features things like automatic browser reloading (sometimes you'll
+							hear that referred to as "hot reloading"), so it's very developer friendly.  It also
+							will generate a file structure to build Progressive Web Applications - again, this is
+							beyond the scope of this class, but having these tools in place is a great bonus feature
+							of using create-react-app.
+
+							(After this slide, open up vscode and explore the file structure.
+							Then, we'll create a couple of basic components.)
 						</aside>
 					</section>
 				</section>

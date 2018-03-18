@@ -484,11 +484,11 @@
 				<section>
 					<h2>What We'll Cover</h2>
 					<ul>
-						<li class="fragment">Components</li>
-						<li class="fragment">Props</li>
-						<li class="fragment">State</li>
-						<li class="fragment">Events</li>
-						<li class="fragment">Children</li>
+						<li class="fragment">Components - The Basic Building Block in React</li>
+						<li class="fragment">Props - How we Configure Components</li>
+						<li class="fragment">State - How we Manage Component Presentation</li>
+						<li class="fragment">Events - How we Manage Component Interaction</li>
+						<li class="fragment">Children - How we Create Reusable Components</li>
 					</ul>
 					<br><br>
 					<h4 class="fragment">Let's Get Started!</h4>
@@ -507,12 +507,14 @@
 							a component very closely resembles HTML, and most concepts of managing HTML through
 							JavaScript extend to React Components.  A component is typically structured as a class,
 							using the ES6 class syntax (example to follow).  The component class will contain a render
-							method that is used to output a JSX virtual dom tree.  Going back to the virtual dom
-							section from yesterday, this is what makes React fast - the fact that it keeps an in-memory
-							representation of your components, that render actual HTML to the page.  All components are
-							mounted to another component.  This typically occurs within the JSX when a component is rendered.
-							However there is also a root component that must be rendered to the page, and this is typically
-							attached to a single DOM node (a div) and the page structure proceeds to populate from there.
+							method that is used to output a JSX virtual dom tree.  In fact if we have time we can cover
+							a concept called stateless functional components, that are a render function and nothing else!
+							Going back to the virtual dom section from yesterday, remember this is what makes React fast -
+							the fact that it keeps an in-memory representation of your components, that render actual HTML
+							to the page.  All components are mounted to another component.  This typically occurs within
+							the JSX when a component is rendered. However there is also a root component that must be
+							rendered to the page, and this is typically attached to a single DOM node (a div) and the
+							page structure proceeds to populate from there.
 						</aside>
 					</section>
 					<section>

@@ -353,7 +353,7 @@
 							from the DOM and unique to react, what is "rendered" by JSX can be tailored for more than
 							just the web.
 
-							For example - React Native is a project that uses JSX to render native mobile applications. 
+							For example - React Native is a project that uses JSX to render native mobile applications.
 							Similar to the goals of NativeScript, but uses the react syntax that is familiar to React
 							developers.
 
@@ -503,12 +503,14 @@
 							<li>Must be "mounted" using ReactDOM.render() with createElement()</li>
 						</ul>
 						<aside class="notes">
-							Components are the building blocks of a React application. The markup to generate
+							Components are the building blocks of a React application. The JSX markup to generate
 							a component very closely resembles HTML, and most concepts of managing HTML through
 							JavaScript extend to React Components.  A component is typically structured as a class,
-							using the ES6 class syntax (example to follow).  The component class will contain a render
-							method that is used to output a JSX virtual dom tree.  In fact if we have time we can cover
-							a concept called stateless functional components, that are a render function and nothing else!
+							using javascript class syntax (example to follow).  The component class will contain a render
+							method that is used to output a JSX virtual dom tree.  You can also have a component that is
+							as simple as a single function, that is called a stateless functional component.  The function
+							acts as a render method for stateless functional components, and we do have an example of one
+							that we'll create tonight.
 							Going back to the virtual dom section from yesterday, remember this is what makes React fast -
 							the fact that it keeps an in-memory representation of your components, that render actual HTML
 							to the page.  All components are mounted to another component.  This typically occurs within
@@ -522,6 +524,14 @@
 						<center>
 							<img src="https://s3.amazonaws.com/gdi-buffalo-react/component.png" />
 						</center>
+						<aside class="notes">
+							Create the following:
+							* components/RecentImages.js (shell with empty methods)
+							* components/ImageOptions.js (shell with empty methods)
+							* components/MemeCreator.js (shell with empty methods) and SFC
+							* Include RecentImages and ImageOptions on Home.js
+							* Include RecentImages and MemeCreator on Images.js
+						</aside>
 					</section>
 				</section>
 				<section>
@@ -577,6 +587,11 @@
 	}
 
 </code></pre>
+						<aside class="notes">
+							Create the following:
+							* Add images array to RecentImages on pages/Home.js and pages/Images.js
+							* Fill out the render method for RecentImages, add images default prop
+						</aside>
 					</section>
 				</section>
 				<section>
@@ -617,6 +632,13 @@
 						<center>
 							<img src="https://s3.amazonaws.com/gdi-buffalo-react/state.png" />
 						</center>
+						<aside class="notes">
+							Create the following:
+							* Default state for pages/Home.js and pages/Images.js
+							* Add selected_image to ImageOptions and MemeCreator
+							* Fill out MemeCreator render method
+							* Fill out ImageOptions render method
+						</aside>
 					</section>
 				</section>
 				<section>
@@ -651,6 +673,12 @@
 						<center>
 							<img src="https://s3.amazonaws.com/gdi-buffalo-react/events.png" />
 						</center>
+						<aside class="notes">
+							Create the following:
+							* Setup default props for event handlers
+							* Add event handlers to all files
+							* Set up event handlers
+						</aside>
 					</section>
 				</section>
 				<section>
@@ -705,12 +733,16 @@
 						<center>
 							<img src="https://s3.amazonaws.com/gdi-buffalo-react/props2.png" />
 						</center>
+						<aside class="notes">
+							Create the following:
+							* Add image_id key for RecentImages
+							* Build Upload Page component if we got time
+						</aside>
 					</section>
 				</section>
 				<section>
 					<h2>Questions?</h2>
 					<div class="fragment">
-						<h4>Let's create some components!</h4>
 						<center>
 							<img src="https://media.giphy.com/media/BwOU6uH7afefu/giphy.gif" />
 						</center>

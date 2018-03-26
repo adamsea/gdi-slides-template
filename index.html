@@ -748,6 +748,99 @@
 						</center>
 					</div>
 				</section>
+				<section>
+					<h2>Day 2: Quick Recap</h2>
+					<ul>
+						<li class="fragment">Components</li>
+						<li class="fragment">Props</li>
+						<li class="fragment">State</li>
+						<li class="fragment">Callbacks</li>
+						<li class="fragment">Keys</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Day 3: State Management &amp; Component Lifecycle</h1>
+					<center>
+						<img src="https://s3.amazonaws.com/gdi-buffalo-react/one-does-not-simply.jpeg" />
+					</center>
+				</section>
+				<section>
+					<h2>What We'll Cover</h2>
+					<ul>
+						<li class="fragment">Component Diagrams - State v Props</li>
+						<li class="fragment">Component Lifecycle Hooks</li>
+						<li class="fragment">Connecting to an API</li>
+						<li class="fragment">Develop Upload Page, and finish MemeCreator</li>
+					</ul>
+					<br><br>
+					<h4 class="fragment">Let's Get Started!</h4>
+				</section>
+				<section>
+					<h1>Home Page Components</h1>
+					<center>
+						<img src="https://s3.amazonaws.com/gdi-buffalo-react/component-state.png" />
+					</center>
+				</section>
+				<section>
+					<h1>Image Page Components</h1>
+					<center>
+						<img src="https://s3.amazonaws.com/gdi-buffalo-react/images-state.png" />
+					</center>
+				</section>
+				<section>
+					<h1>Upload Page Components</h1>
+					<center>
+						<img src="https://s3.amazonaws.com/gdi-buffalo-react/upload-state.png" />
+					</center>
+				</section>
+				<section>
+					<h2>Component Lifecycle Methods</h2>
+					<ul>
+						<li class="fragment">React Provides Methods to Hook into Component Actions</li>
+						<li class="fragment">Pre- and Post- Render</li>
+						<li class="fragment">Pre- and Post- Update</li>
+						<li class="fragment">Pre- props changes</li>
+						<li class="fragment">
+							<a href="https://reactjs.org/docs/react-component.html#the-component-lifecycle">React Component Docs - Read Them!</a>
+						</li>
+					</ul>
+					<aside class="notes">
+						The React component lifecycle methods are very useful for manipulating a components
+						presentation, as well as interacting with APIs. Each lifecycle method has particular
+						use case, but I'll talke about the ones you will most likely use.  (pull up page)
+						The componentWillMount is a pre-render method, that may be useful for setting state
+						in a component, and you can do this synchronously without creating a new render.  The
+						componentDidMount method is one of the most common methods that I use, it is called post-
+						render and is especially important for calling any asynchronous methods, such as ajax,
+						that will trigger a re-render but are immediately needed.  We'll use componentDidMount
+						as our place to call APIs from our pages to initialize images and memes. The
+						componentWillUpdate and componentDidUpdate methods work similar to the initial render
+						hooks, but for subsequent renders.  I tend to not use either of these, as they may be
+						called a lot and have side-effects (for instance, you cannot setState in componentWillUpdate)
+						or you'll get in a loop.  The other method I use often is componentWillReceiveProps, which
+						is a great way to make internal state changes to a component in response to a prop change.
+					</aside>
+				</section>
+				<section>
+					<h2>Time to develop!</h2>
+<pre class="javascript"><code>
+	npm i -S axios
+
+</code></pre>
+					<aside class="notes">
+						Order of operations
+						1) Get gdi-day-2 to reconcile with gdi-day-3-end
+						-- ImageOptions component "Current Image"
+						-- RecentImages component
+							Add RecentImages.css
+							Import css
+							Add className
+						-- Home page - git diff it and werk
+						-- Images page - git diff it and werk
+						-- Upload css - create it
+						-- Upload page -- create it
+					</aside>
+				</section>
 			</div>
 			<footer>
 				<div class="copyright">

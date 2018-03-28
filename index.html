@@ -823,13 +823,10 @@
 				</section>
 				<section>
 					<h2>Time to develop!</h2>
-<pre class="javascript"><code>
-	npm i -S axios
-
-</code></pre>
 					<aside class="notes">
 						Order of operations
-						1) Get gdi-day-2 to reconcile with gdi-day-3-end
+						1) npm i -S axios
+						2) Get gdi-day-2 to reconcile with gdi-day-3-end
 						-- ImageOptions component "Current Image"
 						-- RecentImages component
 							Add RecentImages.css
@@ -840,6 +837,147 @@
 						-- Upload css - create it
 						-- Upload page -- create it
 					</aside>
+				</section>
+				<section>
+					<h2>Day 3: Quick Recap</h2>
+					<ul>
+						<li class="fragment">More about State</li>
+						<li class="fragment">Props Down, Events Up</li>
+						<li class="fragment">React Page/Component Diagram Review</li>
+						<li class="fragment">Finished the Meme Creator App</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Day 4: Best Practices &amp; Application Deployment</h1>
+					<center>
+						<img src="https://s3.amazonaws.com/gdi-buffalo-react/corgi.gif" />
+					</center>
+				</section>
+				<section>
+					<h2>What We'll Cover</h2>
+					<ul>
+						<li class="fragment">Making a Production Build</li>
+						<li class="fragment">Set Up Static Hosting for our App</li>
+						<li class="fragment">React Dev Tools</li>
+						<li class="fragment">Best Practices for Coding Large-Scale Apps</li>
+						<li class="fragment">Best Practices for React App Architecture</li>
+					</ul>
+					<br><br>
+					<h4 class="fragment">Let's Get Started!</h4>
+				</section>
+				<section>
+					<section>
+						<h2>create-react-app - Development Build</h2>
+						<center>
+							<img src="https://s3.amazonaws.com/gdi-buffalo-react/dev-build.png" />
+						</center>
+					</section>
+					<section>
+<pre><code>npm run build
+> gdi-react-app@0.1.0 build /Users/eric/gdi-react-app
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+	99.08 KB  build/static/js/main.3b2aa43b.js
+	200 B     build/static/css/main.73295ba9.css
+
+The project was built assuming it is hosted at the server root.
+You can control this with the homepage field in your package.json.
+For example, add this to build it for GitHub Pages:
+
+	"homepage" : "http://myname.github.io/myapp"
+
+npm run serve
+serving "build/" at http://127.0.0.1:5000
+
+</code></pre>
+					</section>
+					<section>
+						<h2>create-react-app - Production Build</h2>
+						<center>
+							<img src="https://s3.amazonaws.com/gdi-buffalo-react/prod-build.png" />
+						</center>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Best Practices - Code</h1>
+						<center>
+							<img src="https://s3.amazonaws.com/gdi-buffalo-react/battle.gif" />
+						</center>
+					</section>
+					<section>
+						<h2>Suggestions for staying DRY and Bug-free</h2>
+						<ul>
+							<li class="fragment">Create a constants file</li>
+							<li class="fragment">Group variables together</li>
+							<li class="fragment">Use constructors</li>
+							<li class="fragment">Group API methods</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Best Practices - Architecture</h1>
+					</section>
+					<section>
+						<h2>State Management</h2>
+						<ul>
+							<li class="fragment">
+								Always <a href="https://reactjs.org/docs/lifting-state-up.html" target="_blank">Lift State Up</a>
+							</li>
+							<li class="fragment">
+								Remember that <a href="https://reactjs.org/docs/state-and-lifecycle.html#the-data-flows-down" target="_blank">data flows down</a>
+							</li>
+							<li class="fragment">
+								Use callbacks to <a href="https://jasonformat.com/props-down-events-up/" target="_blank">pass data up</a> from a component
+							</li>
+							<li class="fragment">Consider Flux or Redux for Multi-Container Scenarios</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Flux</h2>
+						<center>
+							<img src="https://s3.amazonaws.com/gdi-buffalo-react/flux.png" />
+							<em>
+								<small>
+									<a target="_blank" href="https://facebook.github.io/flux/docs/in-depth-overview.html#content">https://facebook.github.io/flux/docs/in-depth-overview.html#content</a>
+								</small>
+							</em>
+						</center>
+					</section>
+					<section>
+						<h2>Flux vs Redux</h2>
+						<center>
+							<img src="https://s3.amazonaws.com/gdi-buffalo-react/flux-v-redux.png" />
+							<em>
+								<small>
+									<a target="_blank" href="https://medium.com/@tkssharma/facebooks-flux-vs-redux-d02b5348cc17">https://medium.com/@tkssharma/facebooks-flux-vs-redux-d02b5348cc17</a>
+								</small>
+							</em>
+						</center>
+					</section>
+					<section>
+						<h2>Publishing Components</h2>
+						<ul>
+							<li class="fragment">
+								Consider inlining styles with <a href="https://github.com/Khan/aphrodite" target="_blank">Aphrodite</a>
+							</li>
+							<li class="fragment">
+								Use <a href="https://github.com/facebook/prop-types" target="_blank">prop-types</a> to enforce a component's interface
+							</li>
+							<li class="fragment">
+								Use NPM or Yarn to publish components
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<iframe src="https://giphy.com/embed/3oriO5EMLxl1f7funu" width="600" height="350" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/snl-saturday-night-live-episode-4-3oriO5EMLxl1f7funu">via GIPHY</a></p>
 				</section>
 			</div>
 			<footer>
